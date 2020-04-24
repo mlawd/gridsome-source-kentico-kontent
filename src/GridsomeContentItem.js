@@ -195,6 +195,13 @@ class GridsomeContentItem extends ContentItem {
     const fieldName = field.fieldName;
     const html = this.richTextHtmlTransformer.transformRichTextHtml(field);
 
+		if (field.images) {
+			node.assetFields.push({
+				fieldName: 'images',
+				assets: field.images
+			});
+		}
+
     this.addField(node, fieldName, html);
   }
 
